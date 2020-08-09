@@ -29,7 +29,8 @@ def sqrt(number):
     candidates = [x for x in range(number + 1)]
     return sqrtHelper(candidates, 0, len(candidates) - 1, number)
 
-# Test cases:
+# Tests:
+
 print ("Pass" if  (0 == sqrt(0)) else "Fail")
 # Pass
 print ("Pass" if  (3 == sqrt(9)) else "Fail")
