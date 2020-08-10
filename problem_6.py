@@ -5,6 +5,8 @@ def get_min_max(ints):
     Args:
        ints(list): list of integers containing one or more integers
     """
+    assert len(ints) > 0
+
     min_el = ints[0]
     max_el = ints[0]
 
@@ -16,13 +18,20 @@ def get_min_max(ints):
 
     return (min_el, max_el)
 
+# Tests
 
+print (get_min_max([6, 7, 8, 9, 10, 1, 2, 3, 4]))
+# (1, 10)
 
+print (get_min_max([4, 6, 2, 5, 9, 8, -1, 3, 3, 3, 6, 9, 8, 0]))
+# (-1, 9)
 
-# Example Test Case of Ten Integers
-import random
+print (get_min_max([0, 0, 0, 0, 0, 0]))
+# (0, 0)
 
-l = [i for i in range(0, 10)]  # a list containing 0 - 9
-random.shuffle(l)
+print (get_min_max([-2, -99, -145, -5, -5, -145]))
+# (-145, -2)
 
-print ("Pass" if ((0, 9) == get_min_max(l)) else "Fail")
+print (get_min_max([]))
+# AssertionError at assert len(ints) > 0
+
