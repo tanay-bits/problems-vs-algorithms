@@ -69,7 +69,7 @@ class Router:
             parts.remove("")
         return parts
 
-
+# Tests
 router = Router("root handler", "not found handler")
 router.add_handler("/home/about", "about handler")
 print(router.lookup("/")) # should print 'root handler'
