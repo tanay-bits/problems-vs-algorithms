@@ -19,16 +19,13 @@ def find_rotation_pivot(arr, start_idx, end_idx):
     left = arr[mid_idx - 1]
     right = arr[mid_idx + 1]
     center = arr[mid_idx]
+    start = arr[start_idx]
 
     if left < center < right:
-        out_left = find_rotation_pivot(arr, start_idx, mid_idx - 1)
-        if out_left is not None:
-            return out_left
-        out_right = find_rotation_pivot(arr, mid_idx + 1, end_idx)
-        if out_right is not None:
-            return out_right
-        else:
-            return None
+        if start > center:  # The pivot must be on the left side
+            return find_rotation_pivot(arr, start_idx, mid_idx - 1)
+        else:               # The pivot must be on the right side
+            return find_rotation_pivot(arr, mid_idx + 1, end_idx)
     else:
         if left > center:
             out = mid_idx
@@ -85,6 +82,10 @@ test_function([[6, 7, 8, 1, 2, 3, 4], 1])
 test_function([[6, 7, 8, 1, 2, 3, 4], 10])
 # Pass
 test_function([[4, 5, 6, 7, 8, 9, 2], 9])
+# Pass
+test_function([[0, 1, 2, 3, 4, -2], -2])
+# Pass
+test_function([[4, -2, 0, 1, 2, 3], 0])
 # Pass
 test_function([[13], 13])
 # Pass
