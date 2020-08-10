@@ -52,6 +52,7 @@ class Trie:
 
         return current_node
 
+# Tests:
 
 MyTrie = Trie()
 wordList = [
@@ -62,24 +63,57 @@ wordList = [
 for word in wordList:
     MyTrie.insert(word)
 
+# Test 1
+prefix = "f"
+prefixNode = MyTrie.find(prefix)
+print('\n'.join(prefixNode.suffixes())) if prefixNode else print(prefix + " not found")
+# un
+# unction
+# actory
 
-# prefix = "f"
-# prefixNode = MyTrie.find(prefix)
-# if prefixNode:
-#     print('\n'.join(prefixNode.suffixes()))
-# else:
-#     print(prefix + " not found")
+# Test 2
+prefix = "trig"
+prefixNode = MyTrie.find(prefix)
+print('\n'.join(prefixNode.suffixes())) if prefixNode else print(prefix + " not found")
+# ger
+# onometry
 
-from ipywidgets import widgets
-from IPython.display import display
-from ipywidgets import interact
-def f(prefix):
-    if prefix != '':
-        prefixNode = MyTrie.find(prefix)
-        if prefixNode:
-            print('\n'.join(prefixNode.suffixes()))
-        else:
-            print(prefix + " not found")
-    else:
-        print('')
-interact(f,prefix='');
+# Test 3
+prefix = "anto"
+prefixNode = MyTrie.find(prefix)
+print('\n'.join(prefixNode.suffixes())) if prefixNode else print(prefix + " not found")
+# nym
+
+# Test 4
+prefix = "antonym"
+prefixNode = MyTrie.find(prefix)
+print('\n'.join(prefixNode.suffixes())) if prefixNode else print(prefix + " not found")
+# "" (empty string)
+
+# Test 5
+prefix = "antonyma"
+prefixNode = MyTrie.find(prefix)
+print('\n'.join(prefixNode.suffixes())) if prefixNode else print(prefix + " not found")
+# antonyma not found
+
+# Test 6
+prefix = "xe"
+prefixNode = MyTrie.find(prefix)
+print('\n'.join(prefixNode.suffixes())) if prefixNode else print(prefix + " not found")
+# xe not found
+
+# Test 7
+prefix = ""
+prefixNode = MyTrie.find(prefix)
+print('\n'.join(prefixNode.suffixes())) if prefixNode else print(prefix + " not found")
+# ant
+# anthology
+# antagonist
+# antonym
+# fun
+# function
+# factory
+# trie
+# trigger
+# trigonometry
+# tripod
